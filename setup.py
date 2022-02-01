@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import pathlib
-import os
 from setuptools import setup, find_packages
 from rel import __version__
 PKG_NAME = 'ns-rep-imports'
@@ -13,7 +12,7 @@ HERE = pathlib.Path(__file__).parent
 with open(HERE / "README.rst") as fh:
     README = fh.read()
 
-PACKAGES = find_packages(exclude=['build', 'dist', 'env', 'cmd'])
+PACKAGES = find_packages(exclude=['build', 'dist', 'env', 'cmd', 'tmp'])
 
 # This call to setup() does all the work
 setup(
@@ -29,6 +28,9 @@ setup(
     license="MIT",
     packages=PACKAGES,
     keywords=['import', 'namespace', 'rel', 'camel-to-snake'],
+    install_requires=[
+          'kwargshelper >= 2.7.1',
+      ],
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
