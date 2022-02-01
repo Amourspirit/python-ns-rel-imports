@@ -1,0 +1,21 @@
+{
+  "python.pythonPath": "${workspaceFolder}/env/bin/python",
+  "restructuredtext.confPath": "",
+  "autoDocstring.docstringFormat": "google",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "python.testing.pytestArgs": [
+    "tests"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "editor.snippetSuggestions": "bottom",
+  "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+  "editor.suggestSelection": "first",
+  "editor.suggest.localityBonus": true,
+  "python.formatting.provider": "black"
+}
