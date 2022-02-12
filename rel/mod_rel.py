@@ -168,9 +168,7 @@ def get_rel_import_long(in_str: str, ns: str, sep: str = '.') -> rimport_lng:
     else:
         full_name = ns + sep + in_str
     frm, imp = get_rel_import(in_str=in_str, ns=ns, sep=sep)
-    
-    res = bytes(full_name, 'utf-8')
-    sas = imp + '_' + hex(zlib.adler32(res))[2:]
+    sas = imp + '_' + get_shortened(full_name)
     return rimport_lng(frm, imp, sas)
 
 
@@ -189,6 +187,24 @@ def get_rel_import_long_name(in_str: str, ns: str, sep: str = '.') -> str:
     """
     _, _, sas = get_rel_import_long(in_str=in_str, ns=ns, sep=sep)
     return sas
+
+@AcceptedTypes(str)
+def get_shortened(in_str:str) -> str:
+    """
+    Shortens input string
+
+    Args:
+        in_str (str): string to shorten
+
+    Returns:
+        str: Shortend string
+        
+    Example:
+        >>> get_shortened('com.sun.star.inspection.XObjectInspector')
+        3c860faa
+    """
+    res = bytes(in_str, 'utf-8')
+    return hex(zlib.adler32(res))[2:]
 
 
 @AcceptedTypes(str, opt_all_args=True)

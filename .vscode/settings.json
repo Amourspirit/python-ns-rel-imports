@@ -1,5 +1,5 @@
 {
-  "python.pythonPath": "${workspaceFolder}/env/bin/python",
+  "python.defaultInterpreterPath": "${workspaceFolder}/env/bin/python",
   "restructuredtext.confPath": "",
   "autoDocstring.docstringFormat": "google",
   "editor.bracketPairColorization.enabled": true,
